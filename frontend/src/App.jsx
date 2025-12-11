@@ -1,14 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// pages & components
-import Home from "./pages/HomePage";
-import AddPropertyPage from "./pages/AddPropertyPage";
-import PropertyDetailPage from "./pages/PropertyDetailPage";
-import EditPropertyPage from "./pages/EditPropertyPage";
 import Navbar from "./components/Navbar";
+import PropertyHome from "./pages/PropertyHome";
+import AddPropertyPage from "./pages/AddPropertyPage";
+import PropertyPage from "./pages/PropertyPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 
 const App = () => {
   return (
@@ -17,12 +12,9 @@ const App = () => {
         <Navbar />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/add-property" element={<AddPropertyPage />} />
-            <Route path="/property/:propertyId" element={<PropertyDetailPage />} />
-            <Route path="/property/:propertyId/edit" element={<EditPropertyPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/" element={<PropertyHome />} />
+            <Route path="/properties/add-property" element={<AddPropertyPage />} />
+            <Route path="/properties/:id" element={<PropertyPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
